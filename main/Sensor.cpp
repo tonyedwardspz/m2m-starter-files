@@ -1,5 +1,4 @@
 #include "NewPing.h"
-//#include <Wire.h>
 #include "Arduino.h"
 #include "Sensor.h"
 
@@ -22,7 +21,6 @@ float Sensor::distance_down()
   int distance = down_sensor.ping();
   return distance / US_ROUNDTRIP_CM;
 }
-
 
 float Sensor::left_light_sensor()
 {

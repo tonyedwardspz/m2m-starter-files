@@ -5,12 +5,26 @@ namespace {
   static const byte max_speed_value = 255;
 }
 
-Motor::Motor(int _enable_pin, int _forward_pin, int _reverse_pin):
-  enable_pin{_enable_pin}, forward_pin{_forward_pin}, reverse_pin{_reverse_pin}
+Motor::Motor(String side)
 {
-  pinMode(enable_pin, OUTPUT);
-  pinMode(forward_pin, OUTPUT);
-  pinMode(reverse_pin, OUTPUT);
+  // Setup the pins dependent upon which motor is instantiated
+  if (side == "left") {
+    pinMode(left_motor_pin_enable, OUTPUT);
+    pinMode(left_motor_pin_forward, OUTPUT);
+    pinMode(left_motor_pin_reverse, OUTPUT);
+
+    enable_pin = left_motor_pin_enable;
+    forward_pin = left_motor_pin_forward;
+    reverse_pin = left_motor_pin_reverse;
+  } else if (side == "right"){
+    pinMode(right_motor_pin_enable, OUTPUT);
+    pinMode(right_motor_pin_forward, OUTPUT);
+    pinMode(right_motor_pin_reverse, OUTPUT);
+
+    enable_pin = right_motor_pin_enable;
+    forward_pin = right_motor_pin_forward;
+    reverse_pin = right_motor_pin_reverse;
+  }
   disable();
 }
 
