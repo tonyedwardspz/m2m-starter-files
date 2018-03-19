@@ -25,27 +25,33 @@ void setup()
 }
 
 void loop(){  
+  delay(1000);
+
+  // Motor Usage
   left_motor.forward(speed);
   right_motor.forward(speed);
 
-  delay(4000);
+  delay(1000);
 
   left_motor.reverse(speed);
   right_motor.reverse(speed);
 
-  delay(4000);
+  delay(1000);
 
   left_motor.stop();
   right_motor.stop();
 
+
+  // Distance sensor usage
+  int dist_forwards = sensor.distance_forwards();
+  int dist_down = sensor.distance_down();
+
   Serial.print("\n");
   Serial.print("\nDistance Forwards: ");
-  int dist_forwards = sensor.distance_forwards();
   Serial.print(dist_forwards);
-
   Serial.print("\nDistance Down: ");
-  int dist_down = sensor.distance_down();
   Serial.print(dist_down);
+
 
   // Light Sensor Usage
   int left_light = sensor.left_light_sensor();
@@ -58,15 +64,24 @@ void loop(){
   Serial.print(center_light);
   Serial.print("\nRight: ");
   Serial.print(right_light);
-  delay(1000);
+
+
+  // Interupt Usage
+  int left_pulses = left_motor.get_pulse_count();
+  int right_pulses = right_motor.get_pulse_count();
+
+  Serial.print("\nLeft Pulse Count: ");
+  Serial.print(left_pulses);
+  Serial.print("\nRight Pulse Count: ");
+  Serial.print(right_pulses);
 }
 
 void left_motor_pulse_interrupt()
 {
-  left_motor.get_pulse_count();
+  left_motor.inc_pulse();
 }
 
 void right_motor_pulse_interrupt()
 {
-  right_motor.get_pulse_count();
+  right_motor.inc_pulse();
 }
