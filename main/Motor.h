@@ -23,14 +23,14 @@ class Motor
     const byte right_motor_pin_reverse = 11;
   
   public:
-    static const int max_speed = 100;
+    static const int default_speed = 100;
     Motor(String side);
   
-    void set_speed(int speed = max_speed);
+    void set_speed(int speed = default_speed);
     int get_speed() const { return speed; }
-    void forward(int speed = max_speed);
-    void reverse(int speed = max_speed);
-    void stop(int speed = max_speed);
+    void forward(int speed = default_speed);
+    void reverse(int speed = default_speed);
+    void stop(int speed = default_speed);
     void disable();
     
     void inc_pulse() { pulse_count++; }

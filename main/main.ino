@@ -9,9 +9,11 @@ namespace
 
   auto speed = 200;
 
+  // Instantiate the two motor objects, passing in the side of the robot the motor is on
   Motor left_motor{"left"};
   Motor right_motor{"right"};
 
+  // Instantiate a sensor object
   Sensor sensor{};
 }
 
@@ -24,7 +26,8 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(interrupt_pin_3), right_motor_pulse_interrupt, CHANGE);
 }
 
-void loop(){  
+void loop()
+{  
   delay(1000);
 
   // Motor Usage

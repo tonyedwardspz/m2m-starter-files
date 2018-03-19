@@ -31,7 +31,7 @@ Motor::Motor(String side)
 void Motor::set_speed(int _speed)
 {
   speed = _speed;
-  analogWrite(enable_pin, (speed * max_speed_value) / 100);
+  analogWrite(enable_pin, speed);
 }
 
 void Motor::forward(int speed)
