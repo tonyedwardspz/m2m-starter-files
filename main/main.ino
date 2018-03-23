@@ -22,8 +22,8 @@ void setup()
   Serial.begin(115200);
   pinMode(interrupt_pin_2, INPUT_PULLUP);
   pinMode(interrupt_pin_3, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(interrupt_pin_2), left_motor_pulse_interrupt, CHANGE);
-  attachInterrupt(digitalPinToInterrupt(interrupt_pin_3), right_motor_pulse_interrupt, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(interrupt_pin_2), left_motor_pulse_interrupt, RISING);
+  attachInterrupt(digitalPinToInterrupt(interrupt_pin_3), right_motor_pulse_interrupt, RISING);
 }
 
 void loop()
