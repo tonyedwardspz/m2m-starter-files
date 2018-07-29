@@ -6,20 +6,20 @@ namespace {
   
 }
 
-Sensor::Sensor(){}
+Sensor::Sensor(){
+  
+}
 
 float Sensor::distance_forwards()
 {
   NewPing forward_sensor(forward_trigger, forward_echo, max_distance);
-  int distance = forward_sensor.ping();
-  return distance / US_ROUNDTRIP_CM;
+  return forward_sensor.ping() / US_ROUNDTRIP_CM;
 }
 
 float Sensor::distance_down()
 {
   NewPing down_sensor(down_trigger, down_echo, max_drop);
-  int distance = down_sensor.ping();
-  return distance / US_ROUNDTRIP_CM;
+  return down_sensor.ping() / US_ROUNDTRIP_CM;
 }
 
 float Sensor::left_light_sensor()
