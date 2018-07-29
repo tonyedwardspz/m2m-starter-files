@@ -28,55 +28,21 @@ void setup()
 
 void loop()
 {  
-  delay(1000);
-
-  // Motor Usage
+  // Move robot forwards for one second
   left_motor.forward(speed);
   right_motor.forward(speed);
 
   delay(1000);
 
+  // Move robot backwards for one second
   left_motor.reverse(speed);
   right_motor.reverse(speed);
 
   delay(1000);
 
+  // Stop the robots motors
   left_motor.stop();
   right_motor.stop();
-
-
-  // Distance sensor usage
-  int dist_forwards = sensor.distance_forwards();
-  int dist_down = sensor.distance_down();
-
-  Serial.print("\n");
-  Serial.print("\nDistance Forwards: ");
-  Serial.print(dist_forwards);
-  Serial.print("\nDistance Down: ");
-  Serial.print(dist_down);
-
-
-  // Light Sensor Usage
-  int left_light = sensor.left_light_sensor();
-  int center_light = sensor.center_light_sensor();
-  int right_light = sensor.right_light_sensor();
-
-  Serial.print("\nLeft: ");
-  Serial.print(left_light);
-  Serial.print("\nCenter: ");
-  Serial.print(center_light);
-  Serial.print("\nRight: ");
-  Serial.print(right_light);
-
-
-  // Interupt Usage
-  int left_pulses = left_motor.get_pulse_count();
-  int right_pulses = right_motor.get_pulse_count();
-
-  Serial.print("\nLeft Pulse Count: ");
-  Serial.print(left_pulses);
-  Serial.print("\nRight Pulse Count: ");
-  Serial.print(right_pulses);
 }
 
 void left_motor_pulse_interrupt()
