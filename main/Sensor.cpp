@@ -3,11 +3,11 @@
 #include "Sensor.h"
 
 namespace {
-  
+
 }
 
 Sensor::Sensor(){
-  
+
 }
 
 float Sensor::distance_forwards()
@@ -39,4 +39,3 @@ float Sensor::right_light_sensor()
   const int right_light_sensor = 2;
   return analogRead(right_light_sensor);
 }
-
