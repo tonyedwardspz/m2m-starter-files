@@ -25,13 +25,14 @@ Motor::Motor(String side)
     forward_pin = right_motor_pin_forward;
     reverse_pin = right_motor_pin_reverse;
   }
-  disable();
 }
 
 void Motor::set_speed(int _speed)
 {
-  speed = _speed;
-  analogWrite(enable_pin, speed);
+  if (enabled) {
+    speed = _speed;
+    analogWrite(enable_pin, speed);
+  }
 }
 
 void Motor::forward(int speed)
@@ -52,12 +53,14 @@ void Motor::stop(int speed)
 {
   set_speed(speed);
   digitalWrite(forward_pin, HIGH);
-  digitalWrite(reverse_pin, HIGH);
+  digitalWrite(reverse_pin, HIGH);    
 }
 
 void Motor::disable()
 {
   set_speed(0);
+  enabled = false;
+  
   digitalWrite(forward_pin, LOW);
-  digitalWrite(reverse_pin, LOW);
+  digitalWrite(reverse_pin, LOW);      
 }
