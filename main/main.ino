@@ -52,10 +52,6 @@ void loop()
   // Stop the robots motors
   left_motor.stop();
   right_motor.stop();
-
-  // disable them to prevent further movements
-  left_motor.disable();
-  right_motor.disable();
 }
 
 void left_motor_pulse_interrupt()

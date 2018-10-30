@@ -10,22 +10,41 @@ some to the loop within the main.ino file. As you begin to develop your rover
 instruction set, you'll likely want to encapsulate these groups of instructions
 into functions.
 
+## Default movements
+By default the rover will repeat the following pattern until:
+
+- Forwards for one second
+- Stop motors
+- Turn right for half a second
+- Reverse for one second
+
 ### Motor Usage
 
-**Motors Forwards**
+**Move Rover Forwards**
+Move the rover forwards at the default speed for 1 second.
 
     left_motor.forward(speed);
     right_motor.forward(speed);
+    delay(1000);
 
-**Motors Reverse**
+**Reverse the Rover**
+Move the rover backwards for 1 second.
 
     left_motor.reverse(speed);
     right_motor.reverse(speed);
+    delay(1000);
 
-**Turn off the motors**
+**Stop Rover**
 
     left_motor.stop();
     right_motor.stop();
+
+**Disable the Rover**
+Prevents the rover from moving by switching the motors off. Use this once the
+intended functionality has completed.
+
+    left_motor.disable();
+    right_motor.disable();
 
 ### Distance Sensor Usage
 
