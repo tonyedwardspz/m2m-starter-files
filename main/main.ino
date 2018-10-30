@@ -2,7 +2,7 @@
 #include "Motor.h"
 #include "Sensor.h"
 
-namespace 
+namespace
 {
   const byte interrupt_pin_2 = 2;
   const byte interrupt_pin_3 = 3;
@@ -26,18 +26,27 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(interrupt_pin_3), right_motor_pulse_interrupt, RISING);
 }
 
+// Draws a star
 void loop()
-{  
+{
   // Move robot forwards for one second
   left_motor.forward(speed);
   right_motor.forward(speed);
-
   delay(1000);
+
+  // Stop the robots motors and wait a smidge
+  left_motor.stop();
+  right_motor.stop();
+  delay(150);
+
+  // Turn right for half a second
+  left_motor.forward(speed);
+  right_motor.reverse(speed);
+  delay(500);
 
   // Move robot backwards for one second
   left_motor.reverse(speed);
   right_motor.reverse(speed);
-
   delay(1000);
 
   // Stop the robots motors

@@ -30,16 +30,16 @@ into functions.
 ### Distance Sensor Usage
 
 Returns an integer value for the distance between the sensor and nearest object in cm.
-Note: There should be a minimum delay of 50ms between each ping of the sensor.
+Note: There is a minimum delay of 50ms between each ping of the distance sensors.
 
-    sensor.distance_forwards();
-    sensor.distance_down();
+    sensor.forward();
+    sensor.down();
 
 ### Light Sensor Usage
 
-    sensor.left_light_sensor();
-    sensor.center_light_sensor();
-    sensor.right_light_sensor();
+    sensor.left_light();
+    sensor.center_light();
+    sensor.right_light();
 
 ### Interrupt Usage
 

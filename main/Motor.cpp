@@ -52,12 +52,12 @@ void Motor::stop(int speed)
 {
   set_speed(speed);
   digitalWrite(forward_pin, HIGH);
-  digitalWrite(reverse_pin, HIGH);    
+  digitalWrite(reverse_pin, HIGH);
 }
 
 void Motor::disable()
 {
   set_speed(0);
   digitalWrite(forward_pin, LOW);
-  digitalWrite(reverse_pin, LOW);      
+  digitalWrite(reverse_pin, LOW);
 }
