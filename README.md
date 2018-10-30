@@ -37,9 +37,9 @@ Note: There is a minimum delay of 50ms between each ping of the distance sensors
 
 ### Light Sensor Usage
 
-    sensor.left_light_sensor();
-    sensor.center_light_sensor();
-    sensor.right_light_sensor();
+    sensor.left_light();
+    sensor.center_light();
+    sensor.right_light();
 
 ### Interrupt Usage
 

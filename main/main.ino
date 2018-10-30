@@ -2,7 +2,7 @@
 #include "Motor.h"
 #include "Sensor.h"
 
-namespace 
+namespace
 {
   const byte interrupt_pin_2 = 2;
   const byte interrupt_pin_3 = 3;
@@ -27,7 +27,7 @@ void setup()
 }
 
 void loop()
-{  
+{
   // Move robot forwards for one second
   left_motor.forward(speed);
   right_motor.forward(speed);
