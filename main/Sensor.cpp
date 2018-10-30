@@ -10,13 +10,13 @@ Sensor::Sensor(){
   
 }
 
-float Sensor::distance_forward()
+float Sensor::forward()
 {
   NewPing forward_sensor(forward_trigger, forward_echo, max_distance);
   return forward_sensor.ping() / US_ROUNDTRIP_CM;
 }
 
-float Sensor::distance_down()
+float Sensor::down()
 {
   NewPing down_sensor(down_trigger, down_echo, max_drop);
   return down_sensor.ping() / US_ROUNDTRIP_CM;

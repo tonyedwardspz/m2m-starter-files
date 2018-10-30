@@ -22,8 +22,8 @@ class Sensor
   public:
     Sensor();
   
-    float distance_forward();
-    float distance_down();
+    float forward();
+    float down();
     float left_light_sensor();
     float center_light_sensor();
     float right_light_sensor();
