@@ -66,3 +66,8 @@ Returns an integer value for the number of pulses created by the hall effect sen
 
     left_motor.get_pulse_count();
     right_motor.get_pulse_count();
+
+You can reset the pulse count of each motor by calling:
+
+    left_motor.reset_pulse_count();
+    right_motor.reset_pulse_count();

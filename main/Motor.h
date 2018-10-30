@@ -36,7 +36,9 @@ class Motor
     void disable();
     
     void inc_pulse() { pulse_count++; }
+    void reset_pulse() { pulse_count = 0;}
     unsigned long get_pulse_count() const { return pulse_count; }
+    void reset_pulse_count();
 };
  
 #endif
