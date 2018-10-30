@@ -3,14 +3,14 @@
 #include "Sensor.h"
 
 namespace {
-
+  
 }
 
 Sensor::Sensor(){
-
+  
 }
 
-float Sensor::distance_forwards()
+float Sensor::distance_forward()
 {
   NewPing forward_sensor(forward_trigger, forward_echo, max_distance);
   return forward_sensor.ping() / US_ROUNDTRIP_CM;
@@ -39,3 +39,4 @@ float Sensor::right_light_sensor()
   const int right_light_sensor = 2;
   return analogRead(right_light_sensor);
 }
+
